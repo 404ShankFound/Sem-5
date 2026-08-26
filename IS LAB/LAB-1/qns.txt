@@ -1,0 +1,37 @@
+1. Check if a number/key is invertible in Z-26 or not  GCD(k,26)=1 //Handle k<0
+2. Check if a matrix/key is invertible or not GCD(det(K),26)=1 //Handle det(K)<0
+3. Additive cipher
+4. Multiplicative cipher
+5. Affine cipher
+6. Vignere cipher with text key
+7. Autokey with numeric key
+8. Autokey with text key
+9. Playfair cipher
+10. Hill cipher
+11. Railfence cipher
+12. Known Plaintext attack
+13. Know ciphertext attack
+14. Chosen-Plaintext Attack (CPA)
+15. Chosen-Ciphertext Attack (CCA)
+16. Ciphertext-Only Attack (COA)
+17. Brute force for affine
+18. Brute force for additive
+19. Brute force for Multiplicative
+20. Keyless transposition
+21. Keyed transposition
+22. Combined Columnar transposition
+
+Additional Exercises:
+1. Use a brute-force attack to decipher the following message enciphered by Alice using an 
+additive cipher. Suppose that Alice always uses a key that is close to her birthday, which is on 
+the 13th of the month: 
+NCJAEZRCLAS/LYODEPRLYZRCLASJLCPEHZDTOPDZOLN&BY 
+
+2.  Eve secretly gets access to Alice's computer and using her cipher types "abcdefghi". The 
+screen shows "CABDEHFGL". If Eve knows that Alice is using a keyed transposition cipher, 
+answer the following questions: 
+a. What type of attack is Eve launching? 
+b. What is the size of the permutation key? 
+
+3. Use the Vigenere cipher with keyword "HEALTH" to encipher the message "Life is full of 
+surprises".

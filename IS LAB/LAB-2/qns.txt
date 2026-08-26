@@ -1,0 +1,50 @@
+des_basic_encryption_decryption — Implement DES for a given plaintext and key; perform both encryption and decryption; verify that the original plaintext is recovered; allow plaintext/key as user input; include proper padding and key validation.
+des_implementation_variations — Modify the DES program for different plaintexts, keys, message lengths, multiple messages and multiple 64-bit blocks; support both text and hexadecimal input/output.
+des_without_with_functions — Implement the DES algorithm first without user-defined functions and then modularize the same implementation using functions for IP, key generation, expansion, S-box, P-box, rounds and FP.
+des_intermediate_steps — Modify DES to display intermediate results such as Initial Permutation, round keys, L/R values, Expansion, XOR result, S-box output, P-box output, all 16 rounds and Final Permutation.
+des_decryption — Modify the DES encryption program to perform decryption of a given ciphertext using the reverse round-key order; display the recovered plaintext.
+des_modes — Modify DES to support different modes of operation such as ECB, CBC, CFB and OFB; accept the required IV where applicable; perform encryption and decryption; compare the modes using the same plaintext/key.
+des_cbc_iv_variations — Implement DES-CBC with a user-provided key and IV; modify the program for different plaintexts, keys and IVs; encrypt and decrypt and verify the result.
+des_3des — Modify DES to implement Triple DES; support encryption and decryption using three keys or a 3-key hexadecimal key; accept user input and verify the recovered plaintext.
+des_performance — Measure DES encryption time and decryption time for one or multiple messages/blocks; display the execution time and optionally compare different DES modes.
+aes_basic_encryption_decryption — Implement AES for a given plaintext and key; support AES-128, AES-192 and AES-256; perform encryption and decryption; verify the original plaintext; accept input from the user.
+aes_key_size_variations — Modify AES to support 128-bit, 192-bit and 256-bit keys; automatically select the appropriate number of rounds; display encryption/decryption results for the selected key size.
+aes_intermediate_steps — Modify AES to display key expansion/round keys, initial AddRoundKey, SubBytes, ShiftRows, MixColumns, AddRoundKey, main rounds and final round; skip MixColumns in the final round.
+aes_modes — Modify AES to support different modes such as ECB, CBC, CFB, OFB and CTR; accept IV/nonce where required; perform encryption and decryption and compare the modes.
+aes_cbc_ctr — Implement AES in CBC and CTR modes using user-provided key and IV/nonce; modify plaintext, key and IV/nonce; perform both encryption and decryption and verify the plaintext.
+aes_performance — Measure AES encryption and decryption time for AES-128, AES-192 and AES-256; use the same or multiple messages and display/compare the execution times.
+des_aes_comparison — Encrypt and decrypt the same set of messages using DES and AES; measure encryption/decryption time and compare their performance.
+aes_keysize_performance — Encrypt the same messages using AES-128, AES-192 and AES-256; measure execution time for encryption and decryption; compare the performance of all three key sizes.
+mode_performance_comparison — Encrypt the same messages using different DES/AES modes; measure execution time for each mode; compare the results and optionally plot a performance graph.
+multi_message_block_encryption — Encrypt five different messages using the same algorithm and key; handle messages of different lengths and multiple blocks; decrypt all ciphertexts and verify the original messages.
+combined_des_aes_performance — Build a single program that takes multiple messages, encrypts/decrypts them using DES, AES-128, AES-192 and AES-256, optionally uses different modes, measures encryption/decryption time and presents a comparison/graph.
+des_aes_mode_key_combination — Given a DES/AES program, modify it to change the algorithm, key size, mode, plaintext, IV/nonce and encryption/decryption operation according to user input; validate all parameters and display the corresponding ciphertext and recovered plaintext.
+des_aes_hex_blocks — Modify the program to accept hexadecimal blocks as input, encrypt each block using the specified DES/AES key, display hexadecimal ciphertext for every block and decrypt the ciphertext back to the original blocks.
+des_aes_padding — Modify DES/AES to correctly handle plaintexts whose lengths are not equal to the cipher block size; apply appropriate padding before encryption and remove it after decryption.
+des_aes_complete_lab — Implement a complete interactive DES/AES system supporting encryption/decryption, user input, key validation, padding, multiple blocks, DES/AES variants, modes, IV/nonce, execution-time measurement and performance comparison.
+
+Additional Exercises: 
+1.  Using DES and AES(128, 192, and 256 bits key).encrypt the five different messages using 
+same key. 
+a. Consider different modes of operation  
+b.  Plot the graph which shows execution time taken by each technique. 
+c. Compare time taken by different modes of operation  
+
+2. Encrypt the following block of data using DES with the key "A1B2C3D4E5F60708". The data 
+to be encrypted is: Mathematica 
+Block1: 54686973206973206120636f6e666964656e7469616c206d657373616765 
+Block2: 416e64207468697320697320746865207365636f6e6420626c6f636b 
+a. Provide the ciphertext for each block. 
+b. Decrypt the ciphertext to retrieve the original plaintext blocks. 
+
+3. Using AES-256, encrypt the message "Encryption Strength" with the key 
+"0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF". 
+Then decrypt the ciphertext to verify the original message. 
+
+4. Encrypt the message "Secure Communication" using DES in Cipher Block Chaining (CBC) 
+mode with the key "A1B2C3D4" and an initialization vector (IV) of "12345678". Provide the 
+ciphertext and then decrypt it to retrieve the original message. 
+
+5. Encrypt the message "Cryptography Lab Exercise" using AES in Counter (CTR) mode with 
+the key "0123456789ABCDEF0123456789ABCDEF" and a nonce of "0000000000000000". 
+Provide the ciphertext and then decrypt it to retrieve the original message. 

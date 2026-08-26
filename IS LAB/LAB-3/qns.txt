@@ -1,0 +1,76 @@
+1. `rsa_basic_encryption_decryption` — Generate/use RSA public and private keys; encrypt a plaintext and decrypt the ciphertext; verify the original message.
+
+2. `rsa_key_generation` — Given `p` and `q`, calculate `n`, `φ(n)`, choose valid `e`, calculate `d`, and display public/private keys.
+
+3. `rsa_user_input_validation` — Modify RSA to accept `p`, `q`, `e` and plaintext from the user; validate primes, `gcd(e,φ(n))=1`, and message `< n`.
+
+4. `rsa_different_message_keys` — Modify RSA for different plaintexts, different `p,q/e`, given public/private keys, and encryption/decryption of multiple messages.
+
+5. `rsa_given_ciphertext` — Given RSA public/private keys and ciphertext, decrypt it and convert the resulting integer back to plaintext.
+
+6. `rsa_performance` — Measure RSA key-generation, encryption and decryption time for different message sizes; display and compare the results.
+
+7. `elgamal_basic_encryption_decryption` — Given `(p,g,x)` or `(p,g,h,x)`, generate/use the public key, encrypt a message using random `k`, decrypt using `x`, and verify the plaintext.
+
+8. `elgamal_key_generation` — Generate ElGamal parameters/keys by choosing `p`, `g`, private key `x`, and calculating `h = g^x mod p`; display public/private keys.
+
+9. `elgamal_user_input_validation` — Accept `p`, `g`, `x`, `k` and plaintext from the user; validate parameter ranges and generate the ciphertext `(c1,c2)`.
+
+10. `elgamal_given_ciphertext` — Given `(p,g,h,x)` and ciphertext `(c1,c2)`, calculate the shared value, modular inverse and recover the original plaintext.
+
+11. `elgamal_performance` — Measure ElGamal key-generation, encryption and decryption time for different message sizes and compare the results.
+
+12. `ecc_key_generation` — Given elliptic-curve parameters, base point `G` and private key `d`, calculate the public key `Q=dG` and display both keys.
+
+13. `ecc_point_operations` — Implement elliptic-curve point addition, point doubling and scalar multiplication; use them to calculate public keys.
+
+14. `ecc_encryption_decryption` — Implement the ECC encryption/decryption operation specified in the lab; generate/use public and private keys and verify the recovered message.
+
+15. `ecc_parameter_variations` — Modify ECC for different curve parameters, base points and private keys; calculate the corresponding public keys and perform the required cryptographic operation.
+
+16. `ecc_performance` — Measure ECC key-generation, encryption/decryption or point-operation times and compare performance for different inputs.
+
+17. `diffie_hellman_basic` — Implement DH with public parameters `p,g`; generate Alice/Bob private keys, public keys and common shared secret; verify both secrets are equal.
+
+18. `diffie_hellman_user_input_performance` — Accept `p,g,a,b` from the user; calculate public values and shared secret; verify equality and measure key-generation/key-exchange time.
+
+19. `rsa_ecc_performance_comparison` — Implement RSA and ECC for secure communication/file transfer; compare key-generation time, encryption/decryption speed, key sizes, storage overhead and computational performance.
+
+20. `rsa_elgamal_ecc_comparison` — Implement RSA, ElGamal and ECC for the same messages/data sizes; measure key-generation and encryption/decryption times and compare computational overhead.
+
+21. `asymmetric_multiple_messages` — Encrypt/decrypt multiple messages of different sizes using RSA, ElGamal and/or ECC; verify every recovered plaintext and compare execution times.
+
+22. `secure_file_transfer` — Build a secure file-transfer program using RSA and ECC; generate/exchange keys, encrypt/decrypt files of different sizes and measure key-generation, encryption/decryption time and overhead.
+
+23. `dh_symmetric_key_combination` — Use Diffie-Hellman to establish a shared secret between two peers; verify both peers obtain the same key and use the resulting key for secure communication.
+
+24. `asymmetric_complete_system` — Build an interactive system supporting RSA, ElGamal, ECC and Diffie-Hellman with user input, key generation, encryption/decryption or key exchange, validation, verification and performance measurement. 
+
+
+Additional Exercises: 
+1. With the ElGamal public key (p = 7919, g = 2, h = 6465) and the private key x = 2999, encrypt 
+the message "Asymmetric Algorithms". Decrypt the resulting ciphertext to verify the original 
+message. 
+
+2. Using ECC (Elliptic Curve Cryptography), encrypt the message "Secure Transactions" with 
+the public key. Then decrypt the ciphertext with the private key to verify the original message. 
+
+3. Encrypt the message "Cryptographic Protocols" using the RSA public key (n, e) where n = 
+323 and e = 5. Decrypt the ciphertext with the private key (n, d) where d = 173 to confirm the 
+original message 
+
+4. You are tasked with implementing a secure communication system for a healthcare 
+organization to exchange sensitive patient information securely between doctors and hospitals. 
+Implement the ElGamal encryption scheme to encrypt patient records and medical data, 
+ensuring confidentiality during transmission. Generate public and private keys using the 
+secp256r1 curve and use ElGamal encryption to encrypt patient data with the recipient's public 
+key and decrypt it with the recipient's private key. Measure the performance of encryption and 
+decryption processes for data of varying sizes. 
+
+5. You are conducting a study to evaluate the performance and security of RSA and ElGamal 
+encryption algorithms in securing communication for a government agency. Implement both 
+RSA (using 2048-bit keys) and ElGamal (using the secp256r1 curve) encryption schemes to 
+encrypt and decrypt sensitive messages exchanged between agencies. Measure the time taken 
+for key generation, encryption, and decryption processes for messages of various sizes (e.g., 1 
+KB, 10 KB). Compare the computational efficiency and overhead of RSA and ElGamal 
+algorithms. Perform the same for ECC with RSA and ElGamal. 
