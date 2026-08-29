@@ -1,7 +1,5 @@
-# %%
 """6. Vignere cipher with text key."""
 
-# %%
 def main():
     pass
 
