@@ -46,6 +46,225 @@
 
 24. `asymmetric_complete_system` — Build an interactive system supporting RSA, ElGamal, ECC and Diffie-Hellman with user input, key generation, encryption/decryption or key exchange, validation, verification and performance measurement. 
 
+RSA Modifications
+
+25. rsa_fixed_parameters — Given fixed values of p, q, and e, calculate n, φ(n), and d, then encrypt and decrypt a given plaintext.
+
+26. rsa_generate_random_parameters — Generate suitable prime numbers p and q randomly, calculate RSA parameters, generate keys, and perform encryption/decryption.
+
+27. rsa_different_key_sizes — Generate RSA keys of 1024, 2048 and 3072 bits; perform encryption/decryption and compare key-generation and execution times.
+
+28. rsa_custom_public_key — Accept (n,e) as the public key and plaintext from the user, encrypt the message, and display the ciphertext.
+
+29. rsa_custom_private_key — Accept (n,d) and ciphertext from the user, decrypt the ciphertext and display the recovered plaintext.
+
+30. rsa_ascii_message — Convert each character of a plaintext into its ASCII/integer representation, perform RSA encryption/decryption and reconstruct the original message.
+
+31. rsa_multiple_plaintexts — Use the same RSA key pair to encrypt and decrypt multiple plaintext messages and verify every result.
+
+32. rsa_multiple_keypairs — Generate different RSA key pairs and encrypt different messages using their corresponding public keys.
+
+33. rsa_invalid_parameters — Modify RSA to detect invalid values such as non-prime p/q, p=q, invalid e, or gcd(e,φ(n)) ≠ 1.
+
+34. rsa_message_size_validation — Accept plaintext from the user and check whether it can be encrypted using the selected RSA parameters before performing encryption.
+
+35. rsa_ciphertext_verification — After decryption, compare the recovered plaintext with the original plaintext and display SUCCESS/FAILURE.
+
+36. rsa_change_e — Given p and q, allow the user to select a valid public exponent e and calculate the corresponding private exponent d.
+
+37. rsa_change_plaintext — Modify the RSA program to accept different plaintexts without regenerating the key pair.
+
+38. rsa_hex_conversion — Encrypt a plaintext and represent the ciphertext in hexadecimal; convert it back during decryption.
+
+39. rsa_key_display — Generate RSA keys and display p, q, n, φ(n), e, and d separately as public and private parameters.
+
+40. rsa_encrypt_decrypt_menu — Create a menu-driven RSA program supporting key generation, encryption, decryption, parameter display and exit.
+
+ElGamal Modifications
+
+41. elgamal_fixed_parameters — Use given p, g, x and plaintext to calculate h, encrypt using a randomly selected k, and decrypt the ciphertext.
+
+42. elgamal_custom_k — Accept the ephemeral key k from the user instead of generating it randomly and perform encryption/decryption.
+
+43. elgamal_random_k — Generate a new random k for every encryption and show that encrypting the same plaintext produces different ciphertexts.
+
+44. elgamal_different_messages — Encrypt and decrypt multiple plaintext messages using the same ElGamal key pair.
+
+45. elgamal_different_keys — Generate different ElGamal key pairs and use each pair to encrypt/decrypt different messages.
+
+46. elgamal_parameter_validation — Validate p, g, x, and k before performing ElGamal encryption.
+
+47. elgamal_invalid_k — Modify ElGamal to detect invalid ephemeral keys such as k ≤ 0 or k ≥ p-1.
+
+48. elgamal_given_h — Given (p,g,h,x), verify the public key relation h = g^x mod p and then perform encryption/decryption.
+
+49. elgamal_ciphertext_input — Accept (c1,c2) from the user and decrypt the ciphertext using the private key.
+
+50. elgamal_shared_value — Display the shared value s = c1^x mod p, its modular inverse, and the recovered plaintext during decryption.
+
+51. elgamal_hex_message — Convert a plaintext message into bytes/integer form, perform ElGamal encryption, and convert the decrypted integer back to text.
+
+52. elgamal_repeated_encryption — Encrypt the same message multiple times using different random k values and compare the resulting ciphertexts.
+
+53. elgamal_menu — Create a menu-driven program supporting key generation, encryption, decryption, parameter display and exit.
+
+ECC Modifications
+
+54. ecc_fixed_curve — Generate an ECC key pair using the secp256r1 curve and display the private key and public point (x,y).
+
+55. ecc_different_curves — Generate ECC keys using different supported curves and compare their key-generation times.
+
+56. ecc_given_private_key — Given a curve, base point G, and private key d, calculate and display the public key Q=dG.
+
+57. ecc_different_private_keys — Use different private keys with the same curve and calculate the corresponding public keys.
+
+58. ecc_public_key_display — Generate an ECC key pair and display the public point coordinates x and y separately.
+
+59. ecc_point_addition — Given two points on an elliptic curve, calculate their point addition and display the resulting point.
+
+60. ecc_point_doubling — Given a point P, calculate 2P using elliptic-curve point doubling.
+
+61. ecc_scalar_multiplication — Given a point P and integer k, calculate kP using repeated point addition/doubling.
+
+62. ecc_combined_operations — Implement point addition, point doubling and scalar multiplication and use them to calculate an ECC public key.
+
+63. ecc_point_validation — Check whether a given point (x,y) lies on the selected elliptic curve before performing operations.
+
+64. ecc_invalid_point — Modify ECC to detect invalid points and display an appropriate error message.
+
+65. ecc_ecdh_basic — Generate Alice and Bob ECC key pairs, exchange public keys and calculate their common shared secret.
+
+66. ecc_ecdh_user_input — Accept ECC curve and key parameters from the user and perform ECDH key agreement.
+
+67. ecc_ecdh_verification — Calculate Alice's and Bob's shared secrets separately and verify that they are equal.
+
+68. ecc_ecdh_kdf — Use ECDH to generate a shared secret and apply a KDF to derive a fixed-length symmetric key.
+
+69. ecc_ecies_encryption — Use an ECC public key to derive a shared key and use AES to encrypt a plaintext; decrypt it using the ECC private key.
+
+70. ecc_different_messages — Encrypt and decrypt multiple messages using ECC-based hybrid encryption.
+
+71. ecc_different_keypairs — Generate different ECC key pairs and use them for separate encryption/decryption operations.
+
+72. ecc_menu — Create an interactive ECC program supporting key generation, encryption/decryption, parameter display and exit.
+
+Diffie-Hellman Modifications
+
+73. dh_fixed_values — Given p, g, Alice's private key a, and Bob's private key b, calculate public keys and the common shared secret.
+
+74. dh_random_private_keys — Generate random private keys for Alice and Bob and calculate their public values and shared secret.
+
+75. dh_user_input — Accept p, g, a, and b from the user and perform the complete Diffie-Hellman exchange.
+
+76. dh_parameter_validation — Validate p, g, a, and b before performing the key exchange.
+
+77. dh_shared_secret_verification — Calculate the shared secret independently for Alice and Bob and verify that both values are equal.
+
+78. dh_change_generator — Perform Diffie-Hellman using different valid generator values and compare the resulting shared secrets.
+
+79. dh_multiple_users — Extend Diffie-Hellman to demonstrate key exchange between multiple pairs of users.
+
+80. dh_performance — Measure key-generation and shared-secret computation time for different parameter sizes.
+
+81. dh_shared_key_aes — Use the Diffie-Hellman shared secret as the basis for an AES key and encrypt/decrypt a message.
+
+82. dh_key_derivation — Apply a hash/KDF to the DH shared secret and generate a fixed-length symmetric key.
+
+Performance Modifications
+
+83. rsa_message_size_comparison — Measure RSA encryption/decryption time for messages of 1 KB, 10 KB and 100 KB and compare the results.
+
+84. elgamal_message_size_comparison — Measure ElGamal encryption/decryption time for different message sizes and display the results in a table.
+
+85. ecc_message_size_comparison — Measure ECC-based encryption/decryption time for different message sizes.
+
+86. algorithm_performance_table — Compare RSA, ElGamal and ECC key-generation, encryption and decryption times in a single table.
+
+87. key_size_performance — Compare different RSA and ECC key sizes and measure their key-generation performance.
+
+88. repeated_performance_test — Run each cryptographic operation multiple times and calculate the average execution time.
+
+89. performance_best_algorithm — Compare algorithms based on measured execution time and identify the fastest algorithm for each operation.
+
+90. performance_overhead — Calculate and display the difference in execution time between two asymmetric algorithms.
+
+Multiple Message / Data Modifications
+
+91. multiple_messages_same_key — Encrypt and decrypt 5 different messages using the same key pair and verify every message.
+
+92. multiple_messages_different_sizes — Encrypt messages of different sizes and record encryption/decryption time for each.
+
+93. same_message_multiple_times — Encrypt the same message multiple times and compare the ciphertexts.
+
+94. message_file_input — Read plaintext from a text file, encrypt it, decrypt it and verify the recovered file content.
+
+95. binary_data_encryption — Generate binary data of different sizes and encrypt/decrypt it using a hybrid asymmetric encryption scheme.
+
+96. large_data_hybrid_encryption — Use RSA/ECC only for key exchange and AES for encrypting large data, then decrypt and verify the data.
+
+Validation / Error Handling Modifications
+
+97. invalid_user_input — Modify the cryptographic program to handle invalid numeric input, empty messages and invalid parameter values.
+
+98. invalid_key_input — Detect invalid public/private keys and display an appropriate error instead of terminating the program.
+
+99. invalid_ciphertext — Handle invalid or corrupted ciphertext during decryption and display an error message.
+
+100. wrong_private_key — Demonstrate what happens when ciphertext encrypted with one public key is decrypted using a different private key.
+
+101. tampered_ciphertext — Modify the ciphertext before decryption and verify whether the original plaintext can still be recovered.
+
+102. verification_failure — Modify the program to explicitly display SUCCESS when plaintext matches and FAILURE otherwise.
+
+Combined Algorithm Questions
+
+103. rsa_vs_elgamal — Implement RSA and ElGamal for the same plaintext, perform encryption/decryption and compare their execution times.
+
+104. rsa_vs_ecc — Implement RSA and ECC-based encryption for the same message and compare key sizes and execution times.
+
+105. elgamal_vs_ecc — Implement ElGamal and ECC-based encryption/decryption and compare their computational performance.
+
+106. rsa_elgamal_ecc — Implement RSA, ElGamal and ECC for the same input message and compare key generation, encryption and decryption times.
+
+107. three_algorithm_multiple_messages — Encrypt multiple messages using RSA, ElGamal and ECC and verify every recovered plaintext.
+
+108. algorithm_selection — Given different message sizes, measure RSA, ElGamal and ECC performance and determine which algorithm is more suitable for each case.
+
+Secure Communication / File Transfer Modifications
+
+109. secure_message_exchange — Build a two-user system where one user encrypts a message using the recipient's public key and the recipient decrypts it using their private key.
+
+110. secure_file_transfer_rsa — Encrypt a file using a randomly generated symmetric key and protect the symmetric key using RSA.
+
+111. secure_file_transfer_ecc — Establish a shared key using ECC/ECDH and use AES to encrypt a file.
+
+112. secure_file_transfer_comparison — Implement RSA- and ECC-based secure file transfer and compare key-generation, encryption and decryption times.
+
+113. secure_communication_dh_aes — Establish a shared secret using DH and use the derived key with AES for secure message exchange.
+
+114. secure_communication_multiple_users — Demonstrate secure communication between multiple users using public/private key pairs.
+
+115. secure_transfer_different_sizes — Transfer files of 1 KB, 10 KB and 100 KB using a hybrid encryption system and compare performance.
+
+Full-System Variations
+
+116. crypto_menu_system — Create a menu-driven system allowing the user to select RSA, ElGamal, ECC or Diffie-Hellman.
+
+117. crypto_key_generation_menu — Create a menu for generating RSA, ElGamal and ECC keys and displaying their parameters.
+
+118. crypto_encrypt_decrypt_menu — Allow the user to select an asymmetric algorithm and perform encryption/decryption based on the selected option.
+
+119. crypto_validation_system — Build an interactive cryptographic system with parameter validation, encryption/decryption, verification and error handling.
+
+120. crypto_performance_system — Build an interactive program that lets the user select an algorithm and message size, performs encryption/decryption and reports execution time.
+
+121. complete_asymmetric_comparison — Implement RSA, ElGamal and ECC and compare key size, key-generation time, encryption time, decryption time and storage overhead.
+
+122. complete_secure_communication — Build a complete system supporting RSA encryption, ElGamal encryption, ECC-based encryption and DH key exchange with user input and verification.
+
+123. complete_file_security_system — Build a secure file-transfer system using asymmetric cryptography for key exchange and symmetric encryption for file data.
+
+124. complete_crypto_performance_analysis — Implement multiple asymmetric algorithms, test different message sizes, repeat measurements, calculate average execution times and display a comparison report.
 
 Additional Exercises: 
 1. With the ElGamal public key (p = 7919, g = 2, h = 6465) and the private key x = 2999, encrypt 
