@@ -1,4 +1,3 @@
-# %%
 """
 Question 65: ECC Key Generation and Public Key Operations
 
@@ -35,9 +34,71 @@ Absorbs: original Q54, Q56, Q57, Q58.
 
 """
 
+from Crypto.PublicKey import ECC
+
+
 def main():
-    # TODO: Implement the experiment described above.
-    pass
+    print("--- ECC Key Generation ---")
+
+    # Use fixed secp256r1 curve
+    curve = "secp256r1"
+
+    while True:
+        print("\n--- Menu ---")
+        print("1. Generate ECC Key Pair")
+        print("2. Use Different Private Keys")
+        print("3. Exit")
+
+        ch = input("Enter choice: ")
+
+        if ch == "1":
+            # Generate ECC key pair
+            key = ECC.generate(curve=curve)
+
+            # Get private key
+            d = key.d
+
+            # Get public point
+            Q = key.pointQ
+
+            print("\n--- ECC Key Pair ---")
+            print("Curve:", curve)
+            print("Private Key d:", d)
+            print("Public Point Q:")
+            print("x =", Q.x)
+            print("y =", Q.y)
+
+        elif ch == "2":
+            print("\nUsing the same curve:", curve)
+
+            try:
+                ds = list(map(int, input(
+                    "Enter private keys separated by space: "
+                ).split()))
+
+                for d in ds:
+                    # Create ECC private key from supplied d
+                    key = ECC.construct(curve=curve, d=d)
+
+                    # Calculate corresponding public point Q = dG
+                    Q = key.pointQ
+
+                    print("\nPrivate Key d:", d)
+                    print("Public Key Q = dG:")
+                    print("x =", Q.x)
+                    print("y =", Q.y)
+
+            except ValueError:
+                print("Error: Enter valid private key values.")
+            except Exception as e:
+                print("Error:", e)
+
+        elif ch == "3":
+            print("Exiting...")
+            break
+
+        else:
+            print("Error: Invalid menu choice.")
 
 
 if __name__ == "__main__":
