@@ -11,6 +11,24 @@ from Crypto.Util.Padding import pad, unpad
 key = input("Enter the key: ").encode()
 plaintext = input("Enter the plaintext: ").encode()
 
+Your DES key must be exactly 8 bytes.
+
+Since you do:
+
+key = input("Enter key: ").encode()
+
+the user must enter an 8-character ASCII key, for example:
+
+12345678
+
+or
+
+abcdefgh
+
+If they enter 1234, DES will give:
+
+ValueError: Incorrect DES key length. It must be exactly 8 bytes long.
+
 # Create DES cipher using ECB mode
 cipher = DES.new(key, DES.MODE_ECB)
 
